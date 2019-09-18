@@ -1,0 +1,179 @@
+Cole Smith
+css459
+
+-------------------------
+-------------------------
+Question Answers
+
+1.
+
+    We need to create a validation set in order to assess the performance of our model on data
+    it hasn't seen before, since we want to be able to apply the model on new data. This holdout
+    set lets us simulate that situation of new data, except we know the answer and the model doesn't.
+
+    If we had included the validation set into the training step, then the model would have an unfair
+    advantage when scoring its performance on this set because it has already seen these points of data.
+
+4.
+
+    The algorithm times out at 100 iterations, with a training error of 1 data point.
+    The validation F1 score is 0.94 with 33 misclassified points.
+
+5.
+
+    These were determined using the final best perceptron on all of the spam_train file, and validated
+    on the spam_test file. The vocabulary was created using a 30-frequency threshold will all eligible
+    words from all of spam_train.
+
+    The following are the top most positive by weight:
+
+        click	0.27
+        number	0.25
+        sight	0.24
+        pleas	0.23
+        basenumb	0.21
+        here	0.19
+        your	0.19
+        deathtospamdeathtospamdeathtospam	0.19
+        exit	0.19
+        httpaddr	0.18
+        remov	0.18
+        guarante	0.18
+        instruct	0.18
+        form	0.17
+        nbsp	0.16
+
+    The following are the top most negative by weight:
+
+        wrote	-0.23
+        inc	-0.16
+        review	-0.16
+        i	-0.15
+        but	-0.15
+        prefer	-0.15
+        on	-0.14
+        recipi	-0.14
+        from	-0.13
+        and	-0.13
+        spam	-0.13
+        yahoo	-0.13
+        version	-0.13
+        plain	-0.13
+        technolog	-0.13
+
+8.
+
+    Of 10, 30, 50, and 100 iterations, the best I found for each was:
+
+    Regular: 10 Iterations, F1: 0.96
+
+    10
+    F1 Score: 0.96
+    [[675  10]
+     [ 15 300]]
+
+    30
+    F1 Score: 0.9559748427672955
+    [[668  17]
+     [ 11 304]]
+
+    50
+    F1 Score: 0.9543307086614173
+    [[668  17]
+     [ 12 303]]
+
+    100
+    (below)
+
+
+    Averaged: x Iterations, F1:
+
+    10
+    F1 Score: 0.9538950715421304
+    [[671  14]
+     [ 15 300]]
+
+    30
+    F1 Score: 0.9555555555555556
+    [[671  14]
+     [ 14 301]]
+
+    50
+    F1 Score: 0.9587301587301588
+    [[672  13]
+     [ 13 302]]
+
+    100
+    (below)
+
+9.
+
+    All training data, Regular Perceptron:
+
+    Using tunings from best Perceptron above.
+    Trained on 5000 samples, tested on 1000 samples from testing file.
+    Vocab from all of spam_train file.
+
+        Max Iterations: 10
+        Training Error: 3
+
+        F1 Score: 0.9952153110047847
+        [[685   0]
+         [  3 312]]
+
+    (Honorable Mention: Averaged Perceptron, 100 Iterations)
+    F1 Score: 0.969502407704655
+    [[679   6]
+     [ 13 302]]
+
+
+-------------------------
+-------------------------
+Results
+
+Regular Preceptron after 100 iterations with 1 training error:
+
+[ INF ] Read 5000 samples.
+[ INF ] Train count: 4000.0 Test Count: 1000.0
+[ INF ] Vocab Size: 2376
+[ INF ] Fitting Perceptron with 2376 dimensionality
+
+F1 Score: 0.9473684210526315
+[[670  15]
+ [ 18 297]]
+
+-------------------------
+
+Averaged Perceptron after 100 iterations with 1 training error:
+
+[ INF ] Read 5000 samples.
+[ INF ] Train count: 4000.0 Test Count: 1000.0
+[ INF ] Vocab Size: 2376
+[ INF ] Fitting Perceptron with 2376 dimensionality
+
+F1 Score: 0.9570747217806042
+[[672  13]
+ [ 14 301]]
+
+
+-------------------------
+-------------------------
+Final result
+
+All training data, Regular Perceptron:
+
+Using tunings from best Perceptron above.
+Trained on 5000 samples, tested on 1000 samples from testing file.
+Vocab from all of spam_train file.
+
+Max Iterations: 10
+Training Error: 3
+
+F1 Score: 0.9952153110047847
+[[685   0]
+ [  3 312]]
+
+(Honorable Mention: Averaged Perceptron, 100 Iterations)
+F1 Score: 0.969502407704655
+[[679   6]
+ [ 13 302]]
